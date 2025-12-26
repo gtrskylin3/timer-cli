@@ -34,7 +34,6 @@ class FocusSessionRepository:
         if 'end_time' in kwargs and focus_session.start_time:
             # Обновляем duration при установке end_time
             focus_session.duration = int((focus_session.end_time - focus_session.start_time).total_seconds())
-
         session.commit()
         session.refresh(focus_session)
         return focus_session
